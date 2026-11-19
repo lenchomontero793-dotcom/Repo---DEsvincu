@@ -1,0 +1,853 @@
+{
+  "platforms": [
+    {
+      "id": "SAP",
+      "name": "SAP S/4HANA",
+      "abbr": "S",
+      "colorHex": "#1E73BE",
+      "type": "ERP",
+      "status": "Operativo",
+      "lastSyncAt": "2026-11-19T01:45:18.521Z",
+      "endpoint": "https://sap-idm.empresa.local/api/v2/users",
+      "syncMode": "Automática",
+      "requiredForActive": false
+    },
+    {
+      "id": "Salesforce",
+      "name": "Salesforce CRM",
+      "abbr": "SF",
+      "colorHex": "#00A1E0",
+      "type": "CRM",
+      "status": "Operativo",
+      "lastSyncAt": "2026-11-19T01:42:18.522Z",
+      "endpoint": "https://empresa.my.salesforce.com/services/data/v59.0",
+      "syncMode": "Automática",
+      "requiredForActive": false
+    },
+    {
+      "id": "Office 365",
+      "name": "Office 365",
+      "abbr": "O",
+      "colorHex": "#D83B01",
+      "type": "Productividad",
+      "status": "Operativo",
+      "lastSyncAt": "2026-11-19T01:46:18.522Z",
+      "endpoint": "https://graph.microsoft.com/v1.0/users",
+      "syncMode": "Automática",
+      "requiredForActive": true
+    },
+    {
+      "id": "HCM",
+      "name": "HCM Propio",
+      "abbr": "H",
+      "colorHex": "#639922",
+      "type": "RRHH",
+      "status": "Operativo",
+      "lastSyncAt": "2026-11-19T01:39:18.522Z",
+      "endpoint": "https://hcm.empresa.local/api/colaboradores",
+      "syncMode": "Automática",
+      "requiredForActive": true
+    },
+    {
+      "id": "ERP Propio",
+      "name": "ERP Propio",
+      "abbr": "E",
+      "colorHex": "#534AB7",
+      "type": "Propia",
+      "status": "Operativo",
+      "lastSyncAt": "2026-11-19T01:32:18.522Z",
+      "endpoint": "https://erp-interno.empresa.local/api/identidades",
+      "syncMode": "Webhook",
+      "requiredForActive": false
+    },
+    {
+      "id": "Portal",
+      "name": "Portal Clientes",
+      "abbr": "P",
+      "colorHex": "#BA7517",
+      "type": "Web",
+      "status": "Mantenimiento",
+      "lastSyncAt": "2026-11-18T23:47:18.522Z",
+      "endpoint": "https://portal.empresa.com/admin/accounts",
+      "syncMode": "Manual",
+      "requiredForActive": false
+    }
+  ],
+  "users": [
+    {
+      "id": "u-1",
+      "rut": "16.482.190-4",
+      "name": "Ana García López",
+      "email": "a.garcia@empresa.com",
+      "dept": "TI",
+      "position": "Arquitecta de Sistemas",
+      "status": "Activo",
+      "lastAccess": "En línea ahora",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-19T00:47:18.522Z",
+      "accounts": [
+        {
+          "platformId": "SAP",
+          "username": "AGARCIA",
+          "role": "Basis Admin",
+          "status": "Activo",
+          "lastAccess": "Hoy 09:10"
+        },
+        {
+          "platformId": "Office 365",
+          "username": "a.garcia@empresa.com",
+          "role": "Global Admin",
+          "status": "Activo",
+          "lastAccess": "Hoy 09:14"
+        },
+        {
+          "platformId": "HCM",
+          "username": "16482190",
+          "role": "Empleado",
+          "status": "Activo",
+          "lastAccess": "Ayer 16:00"
+        },
+        {
+          "platformId": "ERP Propio",
+          "username": "agarcia",
+          "role": "Supervisor TI",
+          "status": "Activo",
+          "lastAccess": "Hoy 08:40"
+        }
+      ],
+      "portalRole": "IT_ADMIN"
+    },
+    {
+      "id": "u-16",
+      "rut": "17.301.884-2",
+      "name": "Carolina Díaz Fuentes",
+      "email": "c.diaz@empresa.com",
+      "dept": "RRHH",
+      "position": "Jefa de Gestión de Personas",
+      "status": "Activo",
+      "portalRole": "RRHH_MANAGER",
+      "lastAccess": "Hoy 10:15",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-19T01:54:00.832Z",
+      "accounts": [
+        {
+          "platformId": "HCM",
+          "username": "17301884",
+          "role": "Admin Nómina",
+          "status": "Activo",
+          "lastAccess": "Hoy 10:15"
+        },
+        {
+          "platformId": "Office 365",
+          "username": "c.diaz@empresa.com",
+          "role": "E3 User",
+          "status": "Activo",
+          "lastAccess": "Hoy 10:05"
+        },
+        {
+          "platformId": "SAP",
+          "username": "CDIAZ",
+          "role": "HR Manager",
+          "status": "Activo",
+          "lastAccess": "Ayer 18:10"
+        }
+      ]
+    },
+    {
+      "id": "u-2",
+      "rut": "18.210.445-K",
+      "name": "Carlos Mendoza Ríos",
+      "email": "c.mendoza@empresa.com",
+      "dept": "Ventas",
+      "position": "Ejecutivo Comercial Senior",
+      "status": "Activo",
+      "lastAccess": "En línea ahora",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-19T00:17:18.522Z",
+      "accounts": [
+        {
+          "platformId": "Salesforce",
+          "username": "c.mendoza@empresa.com",
+          "role": "Account Exec",
+          "status": "Activo",
+          "lastAccess": "Hoy 08:52"
+        },
+        {
+          "platformId": "Office 365",
+          "username": "c.mendoza@empresa.com",
+          "role": "E3 User",
+          "status": "Activo",
+          "lastAccess": "Hoy 08:45"
+        },
+        {
+          "platformId": "HCM",
+          "username": "18210445",
+          "role": "Empleado",
+          "status": "Activo",
+          "lastAccess": "Hace 4 días"
+        }
+      ],
+      "portalRole": "USER"
+    },
+    {
+      "id": "u-3",
+      "rut": "15.903.772-1",
+      "name": "María Fernández",
+      "email": "m.fernandez@empresa.com",
+      "dept": "Finanzas",
+      "position": "Contralora Corporativa",
+      "status": "Activo",
+      "lastAccess": "Ayer 17:30",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-18T22:47:18.522Z",
+      "accounts": [
+        {
+          "platformId": "SAP",
+          "username": "MFERNANDEZ",
+          "role": "FI-CO Approver",
+          "status": "Activo",
+          "lastAccess": "Ayer 17:30"
+        },
+        {
+          "platformId": "Office 365",
+          "username": "m.fernandez@empresa.com",
+          "role": "E5 User",
+          "status": "Activo",
+          "lastAccess": "Ayer 17:20"
+        },
+        {
+          "platformId": "HCM",
+          "username": "15903772",
+          "role": "Jefatura",
+          "status": "Activo",
+          "lastAccess": "Hace 2 días"
+        },
+        {
+          "platformId": "ERP Propio",
+          "username": "mfernandez",
+          "role": "Contabilidad",
+          "status": "Activo",
+          "lastAccess": "Ayer 15:10"
+        },
+        {
+          "platformId": "Portal",
+          "username": "m.fernandez@empresa.com",
+          "role": "Auditor",
+          "status": "Activo",
+          "lastAccess": "Hace 6 días"
+        }
+      ],
+      "portalRole": "AUDITOR"
+    },
+    {
+      "id": "u-4",
+      "rut": "17.114.508-2",
+      "name": "Roberto Silva",
+      "email": "r.silva@empresa.com",
+      "dept": "RRHH",
+      "position": "Especialista de Nómina",
+      "status": "En proceso de baja",
+      "lastAccess": "Hace 3 días",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-18T22:27:18.522Z",
+      "accounts": [
+        {
+          "platformId": "SAP",
+          "username": "RSILVA",
+          "role": "HR Payroll",
+          "status": "Pendiente revocar",
+          "lastAccess": "Hace 3 días"
+        },
+        {
+          "platformId": "Office 365",
+          "username": "r.silva@empresa.com",
+          "role": "E3 User",
+          "status": "Pendiente revocar",
+          "lastAccess": "Hace 3 días"
+        },
+        {
+          "platformId": "HCM",
+          "username": "17114508",
+          "role": "Analista RRHH",
+          "status": "Suspendido",
+          "lastAccess": "Hace 4 días"
+        }
+      ],
+      "portalRole": "USER"
+    },
+    {
+      "id": "u-5",
+      "rut": "19.340.112-8",
+      "name": "Claudia Vargas",
+      "email": "c.vargas@empresa.com",
+      "dept": "Operaciones",
+      "position": "Jefa de Logística",
+      "status": "Activo",
+      "lastAccess": "Hoy 10:01",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-19T01:02:18.522Z",
+      "accounts": [
+        {
+          "platformId": "SAP",
+          "username": "CVARGAS",
+          "role": "MM-WM Manager",
+          "status": "Activo",
+          "lastAccess": "Hoy 10:01"
+        },
+        {
+          "platformId": "Office 365",
+          "username": "c.vargas@empresa.com",
+          "role": "E3 User",
+          "status": "Activo",
+          "lastAccess": "Hoy 09:50"
+        },
+        {
+          "platformId": "HCM",
+          "username": "19340112",
+          "role": "Jefatura",
+          "status": "Activo",
+          "lastAccess": "Ayer 11:00"
+        },
+        {
+          "platformId": "ERP Propio",
+          "username": "cvargas",
+          "role": "Bodega Central",
+          "status": "Activo",
+          "lastAccess": "Hoy 09:30"
+        }
+      ],
+      "portalRole": "USER"
+    },
+    {
+      "id": "u-6",
+      "rut": "14.772.309-6",
+      "name": "Pedro Ramos",
+      "email": "p.ramos@empresa.com",
+      "dept": "TI",
+      "position": "Consultor Externo",
+      "status": "Inactivo",
+      "lastAccess": "Hace 45 días",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-18T20:47:18.522Z",
+      "accounts": [
+        {
+          "platformId": "Office 365",
+          "username": "p.ramos@empresa.com",
+          "role": "F3 User",
+          "status": "Activo",
+          "lastAccess": "Hace 45 días"
+        },
+        {
+          "platformId": "HCM",
+          "username": "14772309",
+          "role": "Externo",
+          "status": "Activo",
+          "lastAccess": "Hace 50 días"
+        }
+      ],
+      "portalRole": "USER"
+    },
+    {
+      "id": "u-7",
+      "rut": "20.115.689-0",
+      "name": "Sofía Torres",
+      "email": "s.torres@empresa.com",
+      "dept": "Ventas",
+      "position": "Coordinadora de Cuentas",
+      "status": "Activo",
+      "lastAccess": "Hoy 11:22",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-19T01:17:18.522Z",
+      "accounts": [
+        {
+          "platformId": "Salesforce",
+          "username": "s.torres@empresa.com",
+          "role": "Sales Ops",
+          "status": "Activo",
+          "lastAccess": "Hoy 11:22"
+        },
+        {
+          "platformId": "Office 365",
+          "username": "s.torres@empresa.com",
+          "role": "E3 User",
+          "status": "Activo",
+          "lastAccess": "Hoy 11:10"
+        },
+        {
+          "platformId": "HCM",
+          "username": "20115689",
+          "role": "Empleado",
+          "status": "Activo",
+          "lastAccess": "Hace 3 días"
+        },
+        {
+          "platformId": "Portal",
+          "username": "s.torres@empresa.com",
+          "role": "Gestor",
+          "status": "Activo",
+          "lastAccess": "Ayer 16:40"
+        }
+      ],
+      "portalRole": "USER"
+    },
+    {
+      "id": "u-8",
+      "rut": "21.094.221-7",
+      "name": "Diego Morales",
+      "email": "d.morales@empresa.com",
+      "dept": "Finanzas",
+      "position": "Analista Contable",
+      "status": "Pendiente",
+      "lastAccess": "Nunca",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-18T21:47:18.522Z",
+      "accounts": [
+        {
+          "platformId": "HCM",
+          "username": "21094221",
+          "role": "Empleado",
+          "status": "Activo",
+          "lastAccess": "Nunca"
+        }
+      ],
+      "portalRole": "USER"
+    },
+    {
+      "id": "u-9",
+      "rut": "16.820.991-5",
+      "name": "Laura Soto",
+      "email": "l.soto@empresa.com",
+      "dept": "Operaciones",
+      "position": "Gerente de Operaciones",
+      "status": "Activo",
+      "lastAccess": "Hoy 07:48",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-18T23:57:18.522Z",
+      "accounts": [
+        {
+          "platformId": "SAP",
+          "username": "LSOTO",
+          "role": "Director Ops",
+          "status": "Activo",
+          "lastAccess": "Hoy 07:48"
+        },
+        {
+          "platformId": "Office 365",
+          "username": "l.soto@empresa.com",
+          "role": "E5 User",
+          "status": "Activo",
+          "lastAccess": "Hoy 07:40"
+        },
+        {
+          "platformId": "HCM",
+          "username": "16820991",
+          "role": "Gerencia",
+          "status": "Activo",
+          "lastAccess": "Ayer 18:00"
+        },
+        {
+          "platformId": "ERP Propio",
+          "username": "lsoto",
+          "role": "Gerencia",
+          "status": "Activo",
+          "lastAccess": "Hoy 07:35"
+        },
+        {
+          "platformId": "Salesforce",
+          "username": "l.soto@empresa.com",
+          "role": "Executive View",
+          "status": "Activo",
+          "lastAccess": "Ayer 14:20"
+        }
+      ],
+      "portalRole": "USER"
+    },
+    {
+      "id": "u-10",
+      "rut": "17.655.310-9",
+      "name": "Javier Herrera",
+      "email": "j.herrera@empresa.com",
+      "dept": "TI",
+      "position": "CISO / Seguridad TI",
+      "status": "Activo",
+      "lastAccess": "En línea ahora",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-19T01:22:18.522Z",
+      "accounts": [
+        {
+          "platformId": "SAP",
+          "username": "JHERRERA",
+          "role": "Security Auditor",
+          "status": "Activo",
+          "lastAccess": "Hoy 09:55"
+        },
+        {
+          "platformId": "Office 365",
+          "username": "j.herrera@empresa.com",
+          "role": "Security Admin",
+          "status": "Activo",
+          "lastAccess": "Hoy 09:50"
+        },
+        {
+          "platformId": "HCM",
+          "username": "17655310",
+          "role": "Jefatura",
+          "status": "Activo",
+          "lastAccess": "Hoy 08:30"
+        },
+        {
+          "platformId": "ERP Propio",
+          "username": "jherrera",
+          "role": "Auditor",
+          "status": "Activo",
+          "lastAccess": "Ayer 16:50"
+        },
+        {
+          "platformId": "Salesforce",
+          "username": "j.herrera@empresa.com",
+          "role": "Compliance",
+          "status": "Activo",
+          "lastAccess": "Hace 2 días"
+        },
+        {
+          "platformId": "Portal",
+          "username": "j.herrera@empresa.com",
+          "role": "Admin",
+          "status": "Activo",
+          "lastAccess": "Hace 4 días"
+        }
+      ],
+      "portalRole": "AUDITOR"
+    },
+    {
+      "id": "u-11",
+      "rut": "18.540.312-1",
+      "name": "Ignacio Pérez",
+      "email": "i.perez@empresa.com",
+      "dept": "Ventas",
+      "position": "Ejecutivo Regional",
+      "status": "En proceso de baja",
+      "lastAccess": "Hace 8 días",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-18T23:47:18.522Z",
+      "accounts": [
+        {
+          "platformId": "Salesforce",
+          "username": "i.perez@empresa.com",
+          "role": "Sales Rep",
+          "status": "Pendiente revocar",
+          "lastAccess": "Hace 8 días"
+        },
+        {
+          "platformId": "ERP Propio",
+          "username": "iperez",
+          "role": "Comercial",
+          "status": "Pendiente revocar",
+          "lastAccess": "Hace 9 días"
+        }
+      ],
+      "portalRole": "USER"
+    },
+    {
+      "id": "u-12",
+      "rut": "15.221.840-3",
+      "name": "Valentina Cruz",
+      "email": "v.cruz@empresa.com",
+      "dept": "Finanzas",
+      "position": "Analista Tesorería",
+      "status": "En proceso de baja",
+      "lastAccess": "Hace 11 días",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-18T19:47:18.522Z",
+      "accounts": [
+        {
+          "platformId": "SAP",
+          "username": "VCRUZ",
+          "role": "Treasury Analyst",
+          "status": "Pendiente revocar",
+          "lastAccess": "Hace 11 días"
+        }
+      ],
+      "portalRole": "USER"
+    },
+    {
+      "id": "u-13",
+      "rut": "19.882.400-K",
+      "name": "Felipe Gutiérrez",
+      "email": "f.gutierrez@empresa.com",
+      "dept": "Operaciones",
+      "position": "Analista de Procesos",
+      "status": "En proceso de baja",
+      "lastAccess": "Hace 2 días",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-18T23:27:18.522Z",
+      "accounts": [
+        {
+          "platformId": "Office 365",
+          "username": "f.gutierrez@empresa.com",
+          "role": "E3 User",
+          "status": "Pendiente revocar",
+          "lastAccess": "Hace 2 días"
+        },
+        {
+          "platformId": "Salesforce",
+          "username": "f.gutierrez@empresa.com",
+          "role": "Read Only",
+          "status": "Pendiente revocar",
+          "lastAccess": "Hace 5 días"
+        },
+        {
+          "platformId": "SAP",
+          "username": "FGUTIERREZ",
+          "role": "PM User",
+          "status": "Pendiente revocar",
+          "lastAccess": "Hace 3 días"
+        }
+      ],
+      "portalRole": "USER"
+    },
+    {
+      "id": "u-14",
+      "rut": "16.109.420-8",
+      "name": "Martín Rojas",
+      "email": "m.rojas@empresa.com",
+      "dept": "Ventas",
+      "position": "Consultor Comercial",
+      "status": "Inactivo",
+      "lastAccess": "Hace 30 días",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-18T01:47:18.522Z",
+      "accounts": [],
+      "portalRole": "USER"
+    },
+    {
+      "id": "u-15",
+      "rut": "17.902.118-5",
+      "name": "Daniela Muñoz",
+      "email": "d.munoz@empresa.com",
+      "dept": "Operaciones",
+      "position": "Coordinadora de Turno",
+      "status": "Inactivo",
+      "lastAccess": "Hace 35 días",
+      "sourceMaster": "HCM Propio",
+      "updatedAt": "2026-11-17T01:47:18.522Z",
+      "accounts": [],
+      "portalRole": "USER"
+    }
+  ],
+  "offboardings": [
+    {
+      "id": "off-1",
+      "userId": "u-4",
+      "userName": "Roberto Silva",
+      "email": "r.silva@empresa.com",
+      "rut": "17.114.508-2",
+      "dept": "RRHH",
+      "offboardDate": "2026-11-15",
+      "reason": "Renuncia voluntaria",
+      "pendingPlatforms": [
+        "SAP",
+        "Office 365"
+      ],
+      "revokedPlatforms": [
+        "HCM"
+      ],
+      "status": "En proceso"
+    },
+    {
+      "id": "off-2",
+      "userId": "u-11",
+      "userName": "Ignacio Pérez",
+      "email": "i.perez@empresa.com",
+      "rut": "18.540.312-1",
+      "dept": "Ventas",
+      "offboardDate": "2026-11-12",
+      "reason": "Término de contrato",
+      "pendingPlatforms": [
+        "Salesforce",
+        "ERP Propio"
+      ],
+      "revokedPlatforms": [
+        "Office 365",
+        "HCM"
+      ],
+      "status": "En proceso"
+    },
+    {
+      "id": "off-3",
+      "userId": "u-12",
+      "userName": "Valentina Cruz",
+      "email": "v.cruz@empresa.com",
+      "rut": "15.221.840-3",
+      "dept": "Finanzas",
+      "offboardDate": "2026-11-10",
+      "reason": "Jubilación",
+      "pendingPlatforms": [
+        "SAP"
+      ],
+      "revokedPlatforms": [
+        "Office 365",
+        "HCM",
+        "ERP Propio"
+      ],
+      "status": "En proceso"
+    },
+    {
+      "id": "off-4",
+      "userId": "u-13",
+      "userName": "Felipe Gutiérrez",
+      "email": "f.gutierrez@empresa.com",
+      "rut": "19.882.400-K",
+      "dept": "Operaciones",
+      "offboardDate": "2026-11-16",
+      "reason": "Renuncia voluntaria",
+      "pendingPlatforms": [
+        "Office 365",
+        "Salesforce",
+        "SAP"
+      ],
+      "revokedPlatforms": [
+        "HCM"
+      ],
+      "status": "En proceso"
+    },
+    {
+      "id": "off-5",
+      "userId": "u-14",
+      "userName": "Martín Rojas",
+      "email": "m.rojas@empresa.com",
+      "rut": "16.109.420-8",
+      "dept": "Ventas",
+      "offboardDate": "2026-10-28",
+      "reason": "Renuncia voluntaria",
+      "pendingPlatforms": [],
+      "revokedPlatforms": [
+        "Salesforce",
+        "Office 365",
+        "HCM"
+      ],
+      "status": "Completado",
+      "completedAt": "2026-10-29T11:30:00Z"
+    },
+    {
+      "id": "off-6",
+      "userId": "u-15",
+      "userName": "Daniela Muñoz",
+      "email": "d.munoz@empresa.com",
+      "rut": "17.902.118-5",
+      "dept": "Operaciones",
+      "offboardDate": "2026-10-20",
+      "reason": "Despido",
+      "pendingPlatforms": [],
+      "revokedPlatforms": [
+        "SAP",
+        "Office 365",
+        "HCM",
+        "ERP Propio"
+      ],
+      "status": "Completado",
+      "completedAt": "2026-10-20T18:10:00Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-1795053246524-ic6c",
+      "action": "auth_login",
+      "text": "Inicio de sesión en portal (USER)",
+      "actor": "c.mendoza@empresa.com",
+      "timestamp": "2026-11-19T01:54:06.524Z"
+    },
+    {
+      "id": "log-1795053246398-v472",
+      "action": "auth_login",
+      "text": "Inicio de sesión en portal (AUDITOR)",
+      "actor": "j.herrera@empresa.com",
+      "timestamp": "2026-11-19T01:54:06.398Z"
+    },
+    {
+      "id": "log-1795053246276-sjii",
+      "action": "auth_login",
+      "text": "Inicio de sesión en portal (IT_ADMIN)",
+      "actor": "a.garcia@empresa.com",
+      "timestamp": "2026-11-19T01:54:06.276Z"
+    },
+    {
+      "id": "log-1",
+      "action": "access_granted",
+      "text": "Ana García López agregada a ERP Propio",
+      "actor": "Sistema / Sync",
+      "timestamp": "2026-11-19T00:52:18.522Z"
+    },
+    {
+      "id": "log-2",
+      "action": "access_revoked",
+      "text": "Ignacio Pérez: acceso Office 365 revocado",
+      "actor": "it-admin@empresa.com",
+      "timestamp": "2026-11-18T23:52:18.522Z"
+    },
+    {
+      "id": "log-3",
+      "action": "platform_synced",
+      "text": "Sincronización SAP S/4HANA completada (15 identidades consolidadas)",
+      "actor": "Conector SAP",
+      "timestamp": "2026-11-18T23:32:18.522Z"
+    },
+    {
+      "id": "log-4",
+      "action": "inconsistency_alert",
+      "text": "Inconsistencia detectada: Pedro Ramos (Inactivo con 2 cuentas activas)",
+      "actor": "Motor de Auditoría",
+      "timestamp": "2026-11-18T22:37:18.522Z"
+    },
+    {
+      "id": "log-5",
+      "action": "user_created",
+      "text": "Diego Morales creado en directorio maestro desde HCM Propio",
+      "actor": "RRHH Sync",
+      "timestamp": "2026-11-18T21:47:18.522Z"
+    }
+  ],
+  "settings": {
+    "syncFrequency": "Diaria (02:00 AM)",
+    "alertEmail": "it-admin@empresa.com",
+    "graceDays": 1,
+    "authMode": "LDAP / Active Directory",
+    "adminRoles": "IT-Admin, RRHH-Manager",
+    "autoFlagOffboarding": true
+  },
+  "credentials": {
+    "u-1": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-16": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-2": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-3": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-4": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-5": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-6": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-7": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-8": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-9": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-10": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-11": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-12": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-13": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-14": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b",
+    "u-15": "da2f5af8af0f1f45bd92f95979e31f9b:2bceeccf97c9e821733981ac49a8a7698687df77044dd407e2e8c703eed57a9ed55a89da3479ea477ad4311072281824eeb3fbe4e5cc9466b527a00c3aaed16b"
+  },
+  "sessions": [
+    {
+      "token": "e808926d0074d7188337e3f69b3f6261f93af15867bb132296a540b629aaddba",
+      "userId": "u-1",
+      "createdAt": "2026-11-19T01:54:06.275Z"
+    },
+    {
+      "token": "501827fa27c61a53845d383c1cca991c56da66e9a05a013ca9b71e7abb416739",
+      "userId": "u-10",
+      "createdAt": "2026-11-19T01:54:06.397Z"
+    },
+    {
+      "token": "e9004970116905f48b94f56edbd5d9f07d51438ddda8203d8c18a598f2cfef67",
+      "userId": "u-2",
+      "createdAt": "2026-11-19T01:54:06.524Z"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "UserSync — Consolidación de Identidades",
+  "description": "Plataforma corporativa para consolidar bases de datos de usuarios, validar accesos en SAP, Salesforce, Office 365 y sistemas propios, gestionar bajas y generar reportes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
